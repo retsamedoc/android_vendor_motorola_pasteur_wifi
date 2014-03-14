@@ -16,15 +16,83 @@
 
 VENDOR_BLOB_FOLDER := vendor/motorola/pasteur_wifi/proprietary
 
+# system/bin
 PRODUCT_COPY_FILES += \
-    $(VENDOR_BLOB_FOLDER)/lib/hw/gps.pasteur.so:system/lib/hw/gps.pasteur.so \
-    $(VENDOR_BLOB_FOLDER)/lib/hw/sensors.pasteur.so:system/lib/hw/sensors.pasteur.so \
-    $(VENDOR_BLOB_FOLDER)/lib/hw/lights.pasteur.so:system/lib/hw/lights.pasteur.so \
-    $(VENDOR_BLOB_FOLDER)/lib/libsensorhub_jni.so:system/lib/libsensorhub_jni.so \
-    $(VENDOR_BLOB_FOLDER)/etc/omapcam/module2/cid1044_mt9m114_sensor_config_dcc.bin:system/etc/omapcam/module2/cid1044_mt9m114_sensor_config_dcc.bin \
-    $(VENDOR_BLOB_FOLDER)/bin/akmd8975:system/bin/akmd8975 \
-    $(VENDOR_BLOB_FOLDER)/bin/ap_gain.bin:system/bin/ap_gain.bin \
-    $(VENDOR_BLOB_FOLDER)/bin/ap_gain_mmul.bin:system/bin/ap_gain_mmul.bin \
-    $(VENDOR_BLOB_FOLDER)/etc/firmware/ducati-m3.bin:system/etc/firmware/ducati-m3.bin \
-    $(VENDOR_BLOB_FOLDER)/etc/firmware/TIInit_10.6.15.bts:system/etc/firmware/TIInit_10.6.15.bts \
-    $(VENDOR_BLOB_FOLDER)/lib/hw/audio.primary.omap4.so:system/lib/hw/audio.primary.omap4.so
+	$(VENDOR_BLOB_FOLDER)/bin/ap_gain.bin:/system/bin/ap_gain.bin \
+	$(VENDOR_BLOB_FOLDER)/bin/ap_gain_mmul.bin:/system/bin/ap_gain_mmul.bin \
+	$(VENDOR_BLOB_FOLDER)/bin/akmd8975:/system/bin/akmd8975 \
+	$(VENDOR_BLOB_FOLDER)/bin/batch:/system/bin/batch \
+	$(VENDOR_BLOB_FOLDER)/bin/battd:/system/bin/battd \
+	$(VENDOR_BLOB_FOLDER)/bin/dbvc_atvc_property_set:/system/bin/dbvc_atvc_property_set \
+	$(VENDOR_BLOB_FOLDER)/bin/ecckeyd:/system/bin/ecckeyd \
+	$(VENDOR_BLOB_FOLDER)/bin/enc_mgt_tool:/system/bin/enc_mgt_tool \
+	$(VENDOR_BLOB_FOLDER)/bin/libthermal-manager.cfg:/system/bin/libthermal-manager.cfg \
+	$(VENDOR_BLOB_FOLDER)/bin/secclkd:/system/bin/secclkd \
+	$(VENDOR_BLOB_FOLDER)/bin/startup_smc.sh:/system/bin/startup_smc.sh \
+	$(VENDOR_BLOB_FOLDER)/bin/thermaldaemon:/system/bin/thermaldaemon \
+	$(VENDOR_BLOB_FOLDER)/bin/whisperd:/system/bin/whisperd
+
+# system/etc
+PRODUCT_COPY_FILES += \
+	$(VENDOR_BLOB_FOLDER)/etc/ecryptfs.tab:/system/etc/ecryptfs.tab \
+	$(VENDOR_BLOB_FOLDER)/etc/encrypt.tab:/system/etc/encrypt.tab \
+	$(VENDOR_BLOB_FOLDER)/etc/excluded-input-devices.xml:/system/etc/excluded-input-devices.xml \
+	$(VENDOR_BLOB_FOLDER)/etc/opl.dat.enc:/system/etc/opl.dat.enc \
+	$(VENDOR_BLOB_FOLDER)/etc/smc_android_cfg.ini:/system/etc/smc_android_cfg.ini \
+	$(VENDOR_BLOB_FOLDER)/etc/smc_pa.ift:/system/etc/smc_pa.ift \
+	$(VENDOR_BLOB_FOLDER)/etc/smc_pa_pk_4_8Mb_ipa.bin:/system/etc/smc_pa_pk_4_8Mb_ipa.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/smc_pa_pk_4_ipa.bin:/system/etc/smc_pa_pk_4_ipa.bin \
+        $(VENDOR_BLOB_FOLDER)/etc/omapcam/module2/cid1044_mt9m114_sensor_config_dcc.bin:system/etc/omapcam/module2/cid1044_mt9m114_sensor_config_dcc.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/TIInit_10.6.15.bts:system/etc/firmware/TIInit_10.6.15.bts \
+        $(VENDOR_BLOB_FOLDER)/etc/firmware/ducati-m3.bin:system/etc/firmware/ducati-m3.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/ti-connectivity/wl1271-fw-multirole-plt.bin:system/etc/firmware/ti-connectivity/wl1271-fw-multirole-plt.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/ti-connectivity/wl1271-fw-multirole-roc.bin:system/etc/firmware/ti-connectivity/wl1271-fw-multirole-roct.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/ti-connectivity/wl1271-nvs.bin:system/etc/firmware/ti-connectivity/wl1271-nvs.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/ti-connectivity/wl128x-fw-multirole-plt.bin:system/etc/firmware/ti-connectivity/wl128x-fw-multirole-plt.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/ti-connectivity/wl128x-fw-multirole-roc.bin:system/etc/firmware/ti-connectivity/wl128x-fw-multirole-roc.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/ti-connectivity/wl12xx-fac-nvs.bin:system/etc/firmware/ti-connectivity/wl12xx-fac-nvs.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/firmware/ti-connectivity/wl12xx-upd-nvs.bin:system/etc/firmware/ti-connectivity/wl12xx-upd-nvs.bin \
+	$(VENDOR_BLOB_FOLDER)/etc/wifi/wlan_fem.ini:/system/etc/wifi/wlan_fem.ini
+
+
+# system/usr
+PRODUCT_COPY_FILES += \
+	$(VENDOR_BLOB_FOLDER)/usr/bin/gki_pd_notifier:system/usr/bin/gki_pd_notifier \
+	$(VENDOR_BLOB_FOLDER)/usr/bin/panic_daemon:system/usr/bin/panic_daemon \
+	$(VENDOR_BLOB_FOLDER)/usr/keylayout/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl
+
+# system/lib
+PRODUCT_COPY_FILES += \
+	$(VENDOR_BLOB_FOLDER)/lib/libbattd.so:/system/lib/libbattd.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libdataencrypt.so:/system/lib/libdataencrypt.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libdataencrypt_tpa.so:/system/lib/libdataencrypt_tpa.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libdataencrypt_utils.so:/system/lib/libdataencrypt_utils.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libhdcp.so:/system/lib/libhdcp.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libhdmi.so:/system/lib/libhdmi.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libmot_bluetooth_jni.so:/system/lib/libmot_bluetooth_jni.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libmotodbgutils.so:/system/lib/libmotodbgutils.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libmoto_netutil.so:/system/lib/libmoto_netutil.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libmotdrm1.so:/system/lib/libmotdrm1.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libmotdrm1_jni.so:/system/lib/libmotdrm1_jni.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libmss.so:/system/lib/libmss.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libmss.so.sig:/system/lib/libmss.so.sig \
+	$(VENDOR_BLOB_FOLDER)/lib/libOMX.ITTIAM.AAC.encode.so:/system/lib/libOMX.ITTIAM.AAC.encode.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libpkip.so:/system/lib/libpkip.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libsensorhub_jni.so:/system/lib/libsensorhub_jni.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libsmapi.so:/system/lib/libsmapi.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libthermal_config.so:/system/lib/libthermal_config.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libthermal_manager.so:/system/lib/libthermal_manager.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libtpa.so:/system/lib/libtpa.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libtpa_core.so:/system/lib/libtpa_core.so \
+	$(VENDOR_BLOB_FOLDER)/lib/libui3d.so:/system/lib/libui3d.so
+
+# RIL files
+PRODUCT_COPY_FILES += \
+	$(VENDOR_BLOB_FOLDER)/lib/libbabysit.so:/system/lib/libbabysit.so
+
+# system/lib/hw
+PRODUCT_COPY_FILES += \
+        $(VENDOR_BLOB_FOLDER)/lib/hw/audio.primary.omap4.so:system/lib/hw/audio.primary.omap4.so \
+	$(VENDOR_BLOB_FOLDER)/lib/hw/gps.pasteur.so:system/lib/hw/gps.pasteur.so \
+	$(VENDOR_BLOB_FOLDER)/lib/hw/sensors.pasteur.so:system/lib/hw/sensors.pasteur.so \
+	$(VENDOR_BLOB_FOLDER)/lib/hw/lights.pasteur.so:system/lib/hw/lights.pasteur.so
